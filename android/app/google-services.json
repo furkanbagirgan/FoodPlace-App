@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "797922713888",
+    "project_id": "food-place-9985b",
+    "storage_bucket": "food-place-9985b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:797922713888:android:484fd0a0928300ba4b7745",
+        "android_client_info": {
+          "package_name": "com.foodplace"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "797922713888-vu7ueltn5gq27j97f50khi23jm4lqv80.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDm1Xr4D-I1rBXVd8U4SGUc77HY2TlDSiQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "797922713888-vu7ueltn5gq27j97f50khi23jm4lqv80.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
