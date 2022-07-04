@@ -1,15 +1,14 @@
 import React from 'react';
-import {StyleSheet, View, Text, TouchableWithoutFeedback} from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { TouchableWithoutFeedback, View, Text, ActivityIndicator } from 'react-native';
 
-import styles from './Button.style';
+import styles from "./Button.style";
 
-function Button({title, onPress, iconName, iconSize, iconColor}) {
+function Button({title,onClick,theme,loading}) {
   return (
-    <TouchableWithoutFeedback onPress={onPress}>
-      <View style={styles.container}>
-        <Text style={styles.title}>{title}</Text>
-        <Icon name={iconName} size={iconSize} color={iconColor} />
+    <TouchableWithoutFeedback onPress={onClick}>
+      <View style={styles[theme].container}>
+        {loading ? <ActivityIndicator size={25} color="#4caf50" /> :
+        <Text style={styles[theme].title}>{title}</Text>}
       </View>
     </TouchableWithoutFeedback>
   );

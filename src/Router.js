@@ -1,18 +1,29 @@
-import React from "react";
+import React,{ useState, useEffect } from "react";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import auth from "@react-native-firebase/auth";
 
 import Home from './pages/Home';
 import Detail from './pages/Detail';
 import Favorites from './pages/Favorites';
 import Profile from './pages/Profile';
+import Signup from './pages/Signup';
+import Login from './pages/Login';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 function Router() {
+  const [userSession,setUserSession]=useState(null);
+
+  useEffect(()=>{
+    auth().onAuthStateChanged((user)=>{
+      setUserSession(!!user);
+    });
+  },[]);
+
   const Tabs=()=>{
     return (
       <Tab.Navigator 
@@ -48,8 +59,21 @@ function Router() {
     );
   }
 
-  return (
-    <NavigationContainer>
+  const AuthStack=()=>{
+    return (
+      <Stack.Navigator>
+        <Stack.Screen name="Login" component={Login} options={{
+          headerShown: false,
+        }}/>
+        <Stack.Screen name="Signup" component={Signup} options={{
+          headerShown: false,
+        }}/>
+      </Stack.Navigator>
+    );
+  }
+
+  const ContentStack=()=>{
+    return (
       <Stack.Navigator>
         <Stack.Screen name="Tabs" component={Tabs} options={{headerShown:false}}/>
         <Stack.Screen name="Detail" component={Detail} options={{
@@ -59,6 +83,16 @@ function Router() {
           headerTintColor: "#4caf50",
         }}/>
       </Stack.Navigator>
+    );
+  }
+
+  return (
+    <NavigationContainer>
+      { !userSession ?
+        <AuthStack/>
+        :
+        <ContentStack/>
+      }
     </NavigationContainer>
   );
 }
