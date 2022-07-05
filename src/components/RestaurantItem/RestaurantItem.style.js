@@ -3,55 +3,45 @@ import { StyleSheet } from "react-native";
 const styles=StyleSheet.create({
   container:{
     width: "100%",
-    flexDirection: "row",
+    height: 200,
+    flexDirection: "column",
     justifyContent: "flex-start",
     alignItems: "center",
-    marginVertical: 5,
-    paddingVertical: 5,
+    marginBottom: 15,
+    padding: 10,
+    borderRadius: 20,
+    backgroundColor: "#ededed"
   },
   image:{
-    width: "25%",
-    height: 100,
-    resizeMode: "cover"
+    width: "100%",
+    height: "70%",
+    resizeMode: "cover",
+    borderRadius: 20
+  },
+  bottomContainer:{
+    width: "100%",
+    height: "30%",
+    flexDirection:"row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   infoContainer:{
-    width: "55%",
+    width: "70%",
+    height: "100%",
     flexDirection:"column",
-    justifyContent: "space-between",
+    justifyContent: "center",
     alignItems: "flex-start",
-    paddingLeft: 10,
-    paddingRight: 10,
+    paddingLeft: 5
   },
   title:{
-    color: "#000",
-    fontSize: 16,
-    marginBottom: 10
-  },
-  price:{
     color: "#000",
     fontSize: 18,
     fontWeight: "bold",
   },
-  iconContainer:{
-    width:"20%",
-    flexDirection: "column",
-    justifyContent: "space-between",
-    alignItems: "flex-end"
+  location:{
+    color: "#000",
+    fontSize: 16,
   },
-  detailButton:{
-    width: 75,
-    height: 35,
-    borderRadius: 15,
-    backgroundColor: "#ccc",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop:20
-  },
-  detailTitle:{
-    color:"#fff",
-    marginRight: 5
-  }
 });
 
 export default styles;

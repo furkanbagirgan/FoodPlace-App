@@ -7,6 +7,7 @@ import { showMessage } from "react-native-flash-message";
 import styles from "./Signup.style";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
+import {addUser} from "../../services/RestaurantService";
 import { RegisterSchema } from '../../Validation';
 
 function Signup({navigation}) {
@@ -23,7 +24,7 @@ function Signup({navigation}) {
     validationSchema: RegisterSchema,
   })
 
-  const signup=()=>{
+  const signup=async()=>{
     if(errors.name || values.name ===""){
       showMessage({
         message: errors.name?? "İsim alanı zorunludur",
@@ -56,9 +57,11 @@ function Signup({navigation}) {
     }
     else{
       setLoading(true);
-      auth().createUserWithEmailAndPassword(values.email,values.password).then(()=>{
-        navigation.goBack();
-      }).catch(error=>{
+      try{
+        const userCredential=await auth().createUserWithEmailAndPassword(values.email,values.password);
+        const userId=userCredential.user.uid;
+        await addUser(userId,{name:values.name,surname:values.surname});
+      }catch(error){
         if (error.code === "auth/email-already-in-use") {
           showMessage({
             message: "Bu mail adresine sahip bir kayıt bulunmakta!",
@@ -72,9 +75,9 @@ function Signup({navigation}) {
             type: "danger",
           });
         }
-      }).finally(()=>{
+      } finally{
         setLoading(false);
-      });
+      };
     }
   }
 

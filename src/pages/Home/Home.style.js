@@ -20,7 +20,7 @@ const styles=StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
-    marginBottom: 20,
+    marginBottom: 30,
   },
   filterItem:{
     width: 100,

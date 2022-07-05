@@ -1,32 +1,26 @@
 import React,{ useEffect, useState } from "react";
 import { View, Text, ScrollView, TouchableWithoutFeedback, FlatList } from "react-native";
-import { firebase } from '@react-native-firebase/database';
+
 
 import styles from "./Home.style";
 import RestaurantItem from './../../components/RestaurantItem';
+import { getRestaurants } from "../../services/RestaurantService";
 
 function Home({navigation}){
   const [loading,setLoading]=useState(false);
   const [activeFilter,setActiveFilter]=useState("eatery");
   const [restaurants,setRestaurants]=useState([]);
-  const app=firebase.app().database("https://food-place-9985b-default-rtdb.europe-west1.firebasedatabase.app");
+  
 
   useEffect(()=>{
     getData();
   },[activeFilter]);
 
-  const getData=()=>{
+  const getData=async()=>{
     setLoading(true);
-    app.ref("restaurants/").once('value').then(snapshot => {
-      const data=snapshot.val();
-      if(data !== null){
-        const datas=data.filter((item)=>{
-          return item.restauranttype === activeFilter;
-        });
-        setRestaurants(datas);
-      }
-      setLoading(false);
-    });
+    const restaurantsData=await getRestaurants(activeFilter);
+    setRestaurants(restaurantsData);
+    setLoading(false);
   }
 
   const keyExtractor=(item)=>{

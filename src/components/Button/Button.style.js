@@ -28,7 +28,7 @@ const styles={
       color: "#fff"
     }
   }),
-  primaryOrange:StyleSheet.create({
+  primaryGreen:StyleSheet.create({
     ...basicStyles,
     container: {
       ...basicStyles.container,
