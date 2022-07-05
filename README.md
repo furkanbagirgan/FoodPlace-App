@@ -1,21 +1,24 @@
 # Food Place App
-This application allows users to view the menus of restaurants. Users can displaying the restaurants and menus. ALso they can add their favorite restaurants to their favourites.
+This application allows users to register and log in later to see food places and their menus. The user can add his favorite food places to his favourites.
 
 ## Used technologies
 - React Native
 - Firebase Authentication
 - Firebase Realtime Database
-- Firebase Storage
 - React Native Navigation
 - React Native Vector Icons
-- React Native Image Picker
+- Formik
+- Yup
 
 ## Screens
 <p><img src="screens/screenRecording.gif" width="30%">
-<img src="screens/homePage.jpg" width="30%">
-<img src="screens/detailPage.jpg" width="30%"></p>
-<img src="screens/favoritesPage.jpg" width="30%">
-<img src="screens/profilePage.jpg" width="30%">
+<img src="screens/loginPage.jpg" width="30%">
+<img src="screens/signupPage.jpg" width="30%"></p>
+<p><img src="screens/homePage.jpg" width="30%">
+<img src="screens/detailPage.jpg" width="30%">
+<img src="screens/profilePage.jpg" width="30%"></p>
+<p><img src="screens/favoritesPage.jpg" width="30%">
+<img src="screens/favoritesDetailPage.jpg" width="30%"></p>
 
 
 ## Installation
