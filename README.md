@@ -16,9 +16,10 @@ This application allows users to register and log in later to see food places an
 <img src="screens/signupPage.jpg" width="30%"></p>
 <p><img src="screens/homePage.jpg" width="30%">
 <img src="screens/detailPage.jpg" width="30%">
-<img src="screens/profilePage.jpg" width="30%"></p>
+<img src="screens/detailPage2.jpg" width="30%"></p>
 <p><img src="screens/favoritesPage.jpg" width="30%">
-<img src="screens/favoritesDetailPage.jpg" width="30%"></p>
+<img src="screens/detailPage3.jpg" width="30%">
+<img src="screens/profilePage.jpg" width="30%"></p>
 
 
 ## Installation
