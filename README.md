@@ -11,16 +11,17 @@ This application allows users to register and log in later to see food places an
 - Yup
 
 ## Screens
-<p><img src="screens/screenRecording.gif" width="30%">
-<img src="screens/loginPage.jpg" width="30%">
-<img src="screens/signupPage.jpg" width="30%"></p>
-<p><img src="screens/homePage.jpg" width="30%">
-<img src="screens/detailPage.jpg" width="30%">
-<img src="screens/detailPage2.jpg" width="30%"></p>
-<p><img src="screens/favoritesPage.jpg" width="30%">
-<img src="screens/detailPage3.jpg" width="30%">
-<img src="screens/profilePage.jpg" width="30%"></p>
+<p><img src="screens/loginPage.jpg" width="32%">
+<img src="screens/signupPage.jpg" width="32%">
+<img src="screens/homePage.jpg" width="32%"></p>
+<p><img src="screens/detailPage.jpg" width="32%">
+<img src="screens/detailPage2.jpg" width="32%">
+<img src="screens/favoritesPage.jpg" width="32%"></p>
+<p><img src="screens/detailPage3.jpg" width="32%">
+<img src="screens/profilePage.jpg" width="32%"></p>
 
+## Screen Recording
+<img src="screens/screenRecording.gif" width="56%">
 
 ## Installation
 1.Clone Project
